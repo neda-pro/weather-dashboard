@@ -1,0 +1,22 @@
+{
+  "sensors": {
+    "temperature": {
+      "id": 1,
+      "type": "temperature",
+      "value": 22.5,
+      "timestamp": "2025-01-28T08:30:00Z"
+    },
+    "humidity": {
+      "id": 2,
+      "type": "humidity",
+      "value": 45.8,
+      "timestamp": "2025-01-28T08:35:00Z"
+    },
+    "pressure": {
+      "id": 3,
+      "type": "pressure",
+      "value": 1013.25,
+      "timestamp": "2025-01-28T08:40:00Z"
+    }
+  }
+}
