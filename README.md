@@ -2,6 +2,12 @@
 
 This project is a weather dashboard that displays temperature, humidity, and pressure data using React, Zustand, and Material-UI. The data is fetched from a backend API and updated at regular intervals.
 
+## Demo
+
+Here is a demo of the Weather Dashboard in action:
+
+![Weather Dashboard Demo](src/assets/recording.gif)
+
 ## Installation
 
 1. **Clone the repository:**
