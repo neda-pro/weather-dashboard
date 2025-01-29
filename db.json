@@ -3,20 +3,20 @@
     "temperature": {
       "id": 1,
       "type": "temperature",
-      "value": 27.7,
-      "timestamp": "2025-01-28T23:34:42.772Z"
+      "value": 34,
+      "timestamp": "2025-01-29T22:50:29.146Z"
     },
     "humidity": {
       "id": 2,
       "type": "humidity",
-      "value": 97.6,
-      "timestamp": "2025-01-28T23:34:42.772Z"
+      "value": 84.3,
+      "timestamp": "2025-01-29T22:50:29.146Z"
     },
     "pressure": {
       "id": 3,
       "type": "pressure",
-      "value": 1020.06,
-      "timestamp": "2025-01-28T23:34:42.772Z"
+      "value": 970.28,
+      "timestamp": "2025-01-29T22:50:29.146Z"
     }
   }
 }

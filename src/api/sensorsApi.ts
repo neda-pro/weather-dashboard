@@ -1,11 +1,26 @@
 import axios from "../services/httpClient";
 import { SensorData } from "../types/sensor";
 
+/**
+ * Fetches sensor data from the "/sensors" endpoint.
+ *
+ * @returns {Promise<SensorData>} A promise that resolves to the sensor data.
+ */
 const getSensors = async (): Promise<SensorData> => {
   const { data } = await axios.get<SensorData>("/sensors");
   return data;
 };
 
+/**
+ * Updates sensor data at regular intervals by sending random sensor values to the server.
+ *
+ * The function generates random values for temperature, humidity, and pressure sensors,
+ * and sends these values to the server using an HTTP PUT request every 2 seconds.
+ *
+ * @async
+ * @function updateSensors
+ * @returns {Promise<void>} A promise that resolves when the function is complete.
+ */
 const updateSensors = async (): Promise<void> => {
   const sendSensorData = async () => {
     const sensors = {
