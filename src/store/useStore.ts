@@ -16,7 +16,6 @@ interface SensorState {
   historyDuration: number;
   addSensorData: (data: SensorArray) => void;
   getLatest: () => SensorArray | null;
-  getHistory: () => SensorArray[];
   getStatsByType: (
     type: string
   ) => { min: number; max: number; avg: number } | null;
@@ -41,6 +40,10 @@ const useStore = create<SensorState>((set, get) => ({
   showHumidity: true,
   refetchInterval: 5000,
   historyDuration: 5, // Default to 5 minutes
+
+  // addSensorData will add the new sensor data to the latest and history state
+  // it will also remove the old data that is older than the historyDuration
+  // and keep the historyDuration in minutes
   addSensorData: (data: SensorArray) => {
     set((state) => {
       const now = Date.now();
@@ -56,7 +59,9 @@ const useStore = create<SensorState>((set, get) => ({
     });
   },
   getLatest: () => get().latest,
-  getHistory: () => get().history.map((entry) => entry.data),
+
+  // returns the stats for the given type
+  // format: { min: number, max: number, avg: number } | null
   getStatsByType: (type: string) => {
     const allValues = get()
       .history.flatMap((entry) => entry.data)
@@ -72,6 +77,9 @@ const useStore = create<SensorState>((set, get) => ({
 
     return { min, max, avg };
   },
+
+  // returns the history data by type for the chart
+  // format: { time: number, value: number }[]
   getHistoryType: (type: string) => {
     return get().history.flatMap((entry) =>
       entry.data

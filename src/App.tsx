@@ -28,7 +28,7 @@ function valueTextRefresh(value: number) {
   return `${value / 1000} sec`;
 }
 function valueTextHistory(value: number) {
-  return `${value / 1000} min`;
+  return `${value} min`;
 }
 
 function App() {
